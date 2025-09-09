@@ -31,6 +31,7 @@ public class GamePanel extends JPanel implements Runnable{
     TileManager tileM = new TileManager(this);
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
+    public CollisionChecker cChecker = new CollisionChecker(this);
     public Player player = new Player(this, keyH);
 
     //set player default position
@@ -85,18 +86,6 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void update(){ // I start in top left corner so + and - is counterintuitive
-        // if(keyH.upPressed == true){
-        //     playerY -= playerSpeed;
-        // }
-        // else if(keyH.downPressed == true){
-        //     playerY += playerSpeed;
-        // }
-        // else if(keyH.leftPressed ==true ){
-        //     playerX -= playerSpeed;
-        // }
-        // else if(keyH.rightPressed == true){
-        //     playerX += playerSpeed;
-        // }
         player.update();
     }
 
